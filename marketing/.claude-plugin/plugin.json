@@ -1,0 +1,8 @@
+{
+  "name": "marketing",
+  "version": "1.0.0",
+  "description": "dembrane marketing toolkit. Describe an email in plain language and get on-brand, Outlook-safe HTML ready to paste into MailerLite. No internal data or workspace wiring.",
+  "author": {
+    "name": "dembrane"
+  }
+}

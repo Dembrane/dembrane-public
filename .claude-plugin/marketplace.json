@@ -1,0 +1,13 @@
+{
+  "name": "dembrane-public",
+  "owner": {
+    "name": "Dembrane"
+  },
+  "plugins": [
+    {
+      "name": "marketing",
+      "source": "./marketing",
+      "description": "dembrane marketing toolkit. Generate on-brand, MailerLite-ready emails and other team-safe skills. No internal Notion or Attio wiring."
+    }
+  ]
+}
