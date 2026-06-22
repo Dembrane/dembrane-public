@@ -2,16 +2,25 @@
 
 <!--
   dembrane master email template. Source of truth for the styled-email skill.
-  Brand tokens live in ../brand-tokens.md. Page background: charcoal #2D2D2C.
-  Content card: parchment #F6F4F1. Type: DM Sans, body weight 300. Sharp
-  corners. Pill only on buttons. Accents are CATEGORICAL, never semantic:
-  event = cyan #00FFFF, article = green #1EFFA1, update = blue #4169E1,
-  policy = amber #FFD166. Swap the accent bar AND the category tag together.
+  Brand tokens live in ../brand-tokens.md.
 
-  FILL: headline, intro, optional BLOCKs (delete what you do not need), the
-  CTA text + href (the button URL appears TWICE below, change both), and the
-  preheader. Keep the footer merge tags {$url_unsubscribe} and {$email}.
-  Never put a double hyphen or a literal close-comment marker inside a comment.
+  LIGHT LAYOUT (this is deliberate, do not switch to a dark page background):
+  page background parchment #F6F4F1, content in a white #FFFFFF card. MailerLite
+  force-appends a required footer (company info, permission line, Unsubscribe,
+  Sent-by-MailerLite badge) in its own DARK text. On a dark page that footer and
+  its unsubscribe link become illegible and dark-mode clients mangle any recolor.
+  A light page keeps the appended footer legible everywhere, Outlook included.
+
+  Type: DM Sans, body weight 400. Sharp corners. Pill only on buttons. Accents
+  are CATEGORICAL, never semantic: event = cyan #00FFFF, article = green #1EFFA1,
+  update = blue #4169E1, policy = amber #FFD166. Swap the accent bar AND the
+  category tag together.
+
+  FILL: logo stays, headline, intro, optional BLOCKs (delete what you do not
+  need), the CTA text + href (the button URL appears TWICE below, change both),
+  and the preheader. Do NOT add a footer or an unsubscribe link, MailerLite adds
+  the required one. Never put a double hyphen or a literal close-comment marker
+  inside a comment.
 -->
 <html lang="en" xmlns="https://www.w3.org/1999/xhtml">
 
@@ -24,7 +33,7 @@
     <!--[if mso]>
   <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
   <![endif]-->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
     <style>
       /* clients that honour <style>: Apple Mail, iOS, Gmail app, etc. */
       body,
@@ -55,7 +64,7 @@
         padding: 0;
         width: 100% !important;
         height: 100% !important;
-        background-color: #2D2D2C;
+        background-color: #F6F4F1;
       }
 
       a {
@@ -89,13 +98,13 @@
     </style>
   </head>
 
-  <body class="body-font" style="margin: 0; padding: 0; background-color: #2D2D2C">
+  <body class="body-font" style="margin: 0; padding: 0; background-color: #F6F4F1">
     <!-- preheader: inbox preview text. ~90 chars. Replace per send. -->
-    <div style="display:none; max-height:0; overflow:hidden; mso-hide:all; font-size:1px; line-height:1px; color:#2D2D2C; opacity:0;">
+    <div style="display:none; max-height:0; overflow:hidden; mso-hide:all; font-size:1px; line-height:1px; color:#F6F4F1; opacity:0;">
       A short, warm line that previews this email in the inbox.
     </div>
     <!-- accent bar (CATEGORICAL colour - swap per send) -->
-    <table bgcolor="#2D2D2C" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+    <table bgcolor="#F6F4F1" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
       <tr>
         <td align="center" style="padding:0;">
           <table border="0" cellpadding="0" cellspacing="0" class="container" role="presentation" style="width:600px; max-width:600px;" width="600">
@@ -107,17 +116,19 @@
       </tr>
     </table>
     <!-- main -->
-    <table bgcolor="#2D2D2C" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+    <table bgcolor="#F6F4F1" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
       <tr>
         <td align="center" style="padding:0 12px;">
-          <table border="0" cellpadding="0" cellspacing="0" class="container" role="presentation" style="width:600px; max-width:600px; background-color:#F6F4F1;" width="600">
-            <!-- header -->
+          <table border="0" cellpadding="0" cellspacing="0" class="container" role="presentation" style="width:600px; max-width:600px; background-color:#FFFFFF;" width="600">
+            <!-- header: logo (left) + category tag (right) -->
             <tr>
               <td class="px" style="padding:28px 40px 8px 40px;">
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                   <tr>
-                    <td align="left" style="font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:22px; font-weight:600; letter-spacing:-0.5px; color:#2D2D2C;">dembrane</td>
-                    <td align="right" style="font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:13px; font-weight:600; color:#2D2D2C;">
+                    <td align="left" valign="middle">
+                      <img alt="dembrane" src="https://storage.mlcdn.com/account_image/2452303/2Y8IRvNBEydCjAdDlQ8wpnSTkEVo7Fa2kEgJ3wkj.png" width="146" height="30" style="display:block; border:0; width:146px; height:30px;" />
+                    </td>
+                    <td align="right" valign="middle" style="font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:13px; font-weight:600; color:#2D2D2C;">
                       <span style="background-color:#00FFFF; padding:5px 12px; color:#2D2D2C;">event invitation</span>
                     </td>
                   </tr>
@@ -129,7 +140,7 @@
               <td class="px" style="padding:24px 40px 0 40px;">
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                   <tr>
-                    <td align="center" style="font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:13px; font-weight:300;" valign="middle">
+                    <td align="center" style="font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:13px; font-weight:400;" valign="middle">
                       <img alt="Real people in dialogue" src="https://storage.mlcdn.com/account_image/2452303/lPdZN8T1Gz68G4yCbHsfadLpgvNtDfDhaWvLjGbz.png" style="display:block; width:100%; max-width:520px; height:auto;" width="520" />
                     </td>
                   </tr>
@@ -142,7 +153,7 @@
                 <h1 class="h1" style="margin:0; font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:32px; line-height:38px; font-weight:500; letter-spacing:-0.5px; color:#2D2D2C;">
                   An evening on what people actually said
                 </h1>
-                <p style="margin:18px 0 0 0; font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:16px; line-height:26px; font-weight:300; color:#2D2D2C;">
+                <p style="margin:18px 0 0 0; font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:16px; line-height:26px; font-weight:400; color:#2D2D2C;">
                   We're gathering a small group to look at what happens when you let a whole room be heard, not just the loudest voices in it. Expect real transcripts, honest conversation, and good coffee.
                 </p>
               </td>
@@ -153,11 +164,11 @@
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-top:1px solid #E6E3DF; border-bottom:1px solid #E6E3DF;" width="100%">
                   <tr>
                     <td style="padding:16px 0; font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:14px; font-weight:600; color:#2D2D2C; width:120px;">When</td>
-                    <td style="padding:16px 0; font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:14px; font-weight:300; color:#2D2D2C;">Thursday 3 July 2026, 18:00</td>
+                    <td style="padding:16px 0; font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:14px; font-weight:400; color:#2D2D2C;">Thursday 3 July 2026, 18:00</td>
                   </tr>
                   <tr>
                     <td style="padding:0 0 16px 0; font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:14px; font-weight:600; color:#2D2D2C;">Where</td>
-                    <td style="padding:0 0 16px 0; font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:14px; font-weight:300; color:#2D2D2C;">'s-Hertogenbosch (full address on RSVP)</td>
+                    <td style="padding:0 0 16px 0; font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:14px; font-weight:400; color:#2D2D2C;">'s-Hertogenbosch (full address on RSVP)</td>
                   </tr>
                 </table>
               </td>
@@ -175,10 +186,10 @@
                 <!--<![endif]-->
               </td>
             </tr>
-            <!-- BLOCK: featured article card (optional) -->
+            <!-- BLOCK: featured article card (optional). Parchment sub-block on the white card. -->
             <tr>
               <td class="px" style="padding:36px 40px 0 40px;">
-                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#FFFFFF;" width="100%">
+                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#F6F4F1; border:1px solid #E6E3DF;" width="100%">
                   <tr>
                     <td style="padding:24px;">
                       <p style="margin:0 0 6px 0; font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:12px; font-weight:600; color:#2D2D2C;">
@@ -187,7 +198,7 @@
                       <p style="margin:10px 0 0 0; font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:18px; line-height:24px; font-weight:500; color:#2D2D2C;">
                         How a city of 300,000 ran a conversation everyone could join
                       </p>
-                      <p style="margin:8px 0 0 0; font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:14px; line-height:22px; font-weight:300; color:#2D2D2C;">
+                      <p style="margin:8px 0 0 0; font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:14px; line-height:22px; font-weight:400; color:#2D2D2C;">
                         A short read on what changed when the listening stopped being a sample and started being everyone.
                       </p>
                       <p style="margin:14px 0 0 0; font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:14px; font-weight:500;">
@@ -201,7 +212,7 @@
             <!-- closing -->
             <tr>
               <td class="px" style="padding:32px 40px 36px 40px;">
-                <p style="margin:0; font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:16px; line-height:26px; font-weight:300; color:#2D2D2C;">
+                <p style="margin:0; font-family:'DM Sans',Helvetica,Arial,sans-serif; font-size:16px; line-height:26px; font-weight:400; color:#2D2D2C;">
                   Warmly,<br />the dembrane team
                 </p>
               </td>
@@ -210,22 +221,14 @@
         </td>
       </tr>
     </table>
-    <!-- footer: keep the merge tags and the address line -->
-    <table bgcolor="#2D2D2C" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
-      <tr>
-        <td align="center" style="padding:24px 12px 40px 12px;">
-          <table border="0" cellpadding="0" cellspacing="0" class="container" role="presentation" style="width:600px; max-width:600px;" width="600">
-            <tr>
-              <td align="center" class="px" style="padding: 0 40px; font-family: 'DM Sans',Helvetica,Arial,sans-serif; font-size: 12px; line-height: 20px; font-weight: 300; color: #F6F4F1">
-                dembrane · 's-Hertogenbosch, the Netherlands<br />
-                You're receiving this at {$email} because you opted in to updates from dembrane.<br />
-                <a href="{$url_unsubscribe}" style="color:#F6F4F1; text-decoration:underline;">unsubscribe</a>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
+    <!--
+      NO FOOTER HERE ON PURPOSE. MailerLite appends the required footer
+      (company name + address from Account settings > Company profile, the
+      permission line, the Unsubscribe link, and on free/trial a "Sent by
+      MailerLite" badge). Do not add your own footer or unsubscribe link, it
+      duplicates MailerLite's. The light page background keeps that appended
+      footer legible. Verify it in MailerLite's own preview, not just locally.
+    -->
   </body>
 
 </html>

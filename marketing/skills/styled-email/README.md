@@ -38,7 +38,7 @@ Claude picks the right accent colour for each one automatically.
 ## Rules of thumb
 
 - Always send yourself a test before sending to the list.
-- Keep the unsubscribe link and the address in the footer (Claude keeps them by default).
+- MailerLite adds the footer (your address + the unsubscribe link) automatically, so the email itself has none. Keep your MailerLite Company profile accurate so that footer is right.
 - dembrane is always lowercase. No em dashes. Warm and human.
 
 ## Where this lives
